@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:control/models/user.dart';
-import 'package:control/provider/users.dart';
+import 'package:control/models/produto.dart';
+import 'package:control/provider/produtos.dart';
 import 'package:provider/provider.dart';
 
 class ProdutoForm extends StatefulWidget {
@@ -16,11 +16,11 @@ class _ProdutoFormState extends State<ProdutoForm> {
 
   final Map<String, String> _formData = {};
 
-  void _loadFormData(User user){
-      _formData['id'] = user.id;
-      _formData['name'] = user.name;
-      _formData['email'] = user.email;
-      _formData['avatarUrl'] = user.avatarUrl;
+  void _loadFormData(Produto produto){
+      _formData['id'] = produto.id;
+      _formData['name'] = produto.name;
+      _formData['email'] = produto.email;
+      _formData['avatarUrl'] = produto.avatarUrl;
     
   }
 
@@ -28,9 +28,9 @@ class _ProdutoFormState extends State<ProdutoForm> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    final user = ModalRoute.of(context)!.settings.arguments as User;
+    final produto = ModalRoute.of(context)!.settings.arguments as Produto;
 
-    _loadFormData(user);
+    _loadFormData(produto);
   }
 
  
@@ -49,8 +49,8 @@ class _ProdutoFormState extends State<ProdutoForm> {
               
               if(isValid) {
               _form.currentState!.save();
-              Provider.of<Users>(context, listen: false).put(
-                User(
+              Provider.of<Produtos>(context, listen: false).put(
+                Produto(
                 id: _formData['id'] ?? '',
                 name: _formData['name'] ?? '',
                 email: _formData['email'] ?? '',

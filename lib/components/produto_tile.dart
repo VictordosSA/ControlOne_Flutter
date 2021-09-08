@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:control/models/user.dart';
-import 'package:control/provider/users.dart';
+import 'package:control/models/produto.dart';
+import 'package:control/provider/produtos.dart';
 import 'package:control/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
-class UserTile extends StatelessWidget {
+class ProdutoTile extends StatelessWidget {
   
-  final User user;
+  final Produto produto;
   
-  const UserTile(this.user);
+  const ProdutoTile(this.produto);
 
   @override
   Widget build(BuildContext context) {
-    final avatar = user.avatarUrl.isEmpty
+    final avatar = produto.avatarUrl.isEmpty
     ? CircleAvatar(child: Icon(Icons.person))
-    : CircleAvatar(backgroundImage: NetworkImage(user.avatarUrl));
+    : CircleAvatar(backgroundImage: NetworkImage(produto.avatarUrl));
     return ListTile(
       leading: avatar,
-      title: Text(user.name),
-      subtitle: Text(user.email),
+      title: Text(produto.name),
+      subtitle: Text(produto.email),
       trailing: Container(
         width: 100,
         child: Row(
@@ -28,8 +28,8 @@ class UserTile extends StatelessWidget {
           color: Colors.orange,
           onPressed: () {
             Navigator.of(context).pushNamed(
-              AppRoutes.USER_FORM,
-              arguments: user, 
+              AppRoutes.PRODUTO_FORM,
+              arguments: produto, 
             );
 
           }, 
@@ -55,7 +55,7 @@ class UserTile extends StatelessWidget {
             ),
             ).then((confirmed){
               if(confirmed){
-                Provider.of<Users>(context, listen: false).remove(user);
+                Provider.of<Produtos>(context, listen: false).remove(produto);
               }
 
             });
