@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (ctx) => Users(), 
+        ),
+        ChangeNotifierProvider(
           create: (ctx) => Produtos(),
         ),
       ],
