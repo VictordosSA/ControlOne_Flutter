@@ -32,7 +32,8 @@ class Produtos with ChangeNotifier{
       (_) => Produto(
         id: produto.id,
         name: produto.name,
-        email: produto.email,
+        descricao: produto.descricao,
+        quantidade: produto.quantidade,
         avatarUrl: produto.avatarUrl,
         ),
       );
@@ -44,7 +45,8 @@ class Produtos with ChangeNotifier{
         () => Produto(
           id: id,
           name: produto.name,
-          email: produto.email,
+          descricao: produto.descricao,
+          quantidade: produto.quantidade,
           avatarUrl: produto.avatarUrl,
         ),
       );

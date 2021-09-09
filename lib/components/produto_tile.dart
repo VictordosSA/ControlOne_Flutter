@@ -18,7 +18,7 @@ class ProdutoTile extends StatelessWidget {
     return ListTile(
       leading: avatar,
       title: Text(produto.name),
-      subtitle: Text(produto.email),
+      subtitle: Text(produto.descricao),
       trailing: Container(
         width: 100,
         child: Row(
@@ -40,8 +40,8 @@ class ProdutoTile extends StatelessWidget {
           onPressed: () {
             showDialog(context: context, 
             builder: (ctx) => AlertDialog(
-              title: Text('Exclusão de Usuário'),
-              content: Text('Deseja realmente excluir esse usuário?'),
+              title: Text('Exclusão de Produto'),
+              content: Text('Deseja realmente excluir esse Produto?'),
               actions: <Widget>[
                 FlatButton(
                   child: Text('Não'),
