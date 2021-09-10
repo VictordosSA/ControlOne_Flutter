@@ -3,5 +3,7 @@ class AppRoutes{
   static const USER_FORM = '/user-form';
   static const PRODUTO_FORM = '/produto-form';
   static const HOME_PRODUTO = '/home_produto';
+    static const FORNECEDOR_FORM = '/fornecedor-form';
+  static const HOME_FORNECEDOR = '/home_fornecedor';
 
 }
