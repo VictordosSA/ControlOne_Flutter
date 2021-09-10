@@ -6,6 +6,9 @@ import 'package:control/views/user_list.dart';
 import 'package:control/views/produto_form.dart';
 import 'package:control/views/produto_list.dart';
 import 'package:control/provider/produtos.dart';
+import 'package:control/views/fornecedor_form.dart';
+import 'package:control/views/fornecedor_list.dart';
+import 'package:control/provider/fornecedores.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -25,6 +28,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (ctx) => Produtos(),
         ),
+        ChangeNotifierProvider(
+          create: (ctx) => Fornecedores(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -36,7 +42,9 @@ class MyApp extends StatelessWidget {
           AppRoutes.HOME: (_) => UserList(),
           AppRoutes.USER_FORM: (_) => UserForm(),
            AppRoutes.HOME_PRODUTO: (_) => ProdutoList(),
-          AppRoutes.PRODUTO_FORM: (_) => ProdutoForm() 
+          AppRoutes.PRODUTO_FORM: (_) => ProdutoForm(),
+          AppRoutes.HOME_FORNECEDOR: (_) => FornecedorList(),
+          AppRoutes.FORNECEDOR_FORM: (_) => FornecedorForm() 
         },
       ),
     );
