@@ -9,6 +9,7 @@ import 'package:control/provider/produtos.dart';
 import 'package:control/views/fornecedor_form.dart';
 import 'package:control/views/fornecedor_list.dart';
 import 'package:control/provider/fornecedores.dart';
+import 'package:control/views/menu_list.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -33,15 +34,16 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Menu',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: {
-          AppRoutes.HOME: (_) => UserList(),
+          AppRoutes.HOME: (_) => MenuList(),
+          AppRoutes.HOME_USER: (_) => UserList(),
           AppRoutes.USER_FORM: (_) => UserForm(),
-           AppRoutes.HOME_PRODUTO: (_) => ProdutoList(),
+          AppRoutes.HOME_PRODUTO: (_) => ProdutoList(),
           AppRoutes.PRODUTO_FORM: (_) => ProdutoForm(),
           AppRoutes.HOME_FORNECEDOR: (_) => FornecedorList(),
           AppRoutes.FORNECEDOR_FORM: (_) => FornecedorForm() 

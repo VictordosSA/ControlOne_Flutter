@@ -1,9 +1,9 @@
 class AppRoutes{
   static const HOME = '/';
-  static const USER_FORM = '/user-form';
-  static const PRODUTO_FORM = '/produto-form';
-  static const HOME_PRODUTO = '/home_produto';
-    static const FORNECEDOR_FORM = '/fornecedor-form';
-  static const HOME_FORNECEDOR = '/home_fornecedor';
-
+  static const HOME_USER = '/user_list';
+  static const USER_FORM = '/user_form';
+  static const PRODUTO_FORM = '/produto_form';
+  static const HOME_PRODUTO = '/produto_list';
+  static const FORNECEDOR_FORM = '/fornecedor_form';
+  static const HOME_FORNECEDOR = '/fornecedor_list';
 }
